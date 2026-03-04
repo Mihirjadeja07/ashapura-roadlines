@@ -4,94 +4,107 @@
 }
 
 * { 
-    cursor: crosshair; 
-    box-sizing: border-box; 
     margin: 0; 
     padding: 0; 
+    box-sizing: border-box; 
+    cursor: crosshair; 
 }
 
 body {
     background-color: var(--asphalt);
     color: white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', sans-serif;
     min-height: 100vh;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     overflow-x: hidden;
+    padding: 20px;
 }
 
-.glass {
-    background: rgba(255, 255, 255, 0.01);
-    backdrop-filter: blur(20px);
+/* મેઈન કન્ટેનર જે મોબાઈલમાં સરખું દેખાશે */
+.container {
+    width: 100%;
+    max-width: 450px;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(15px);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
 }
 
-/* --- MOBILE RESPONSIVENESS (મોબાઈલ માટે સુધારો) --- */
-@media (max-width: 768px) {
-    body {
-        overflow-y: auto; /* મોબાઈલમાં સ્ક્રોલ કરવા દેશે */
-        padding: 20px 0;
-    }
+h1 {
+    font-size: 1.8rem;
+    color: var(--amber);
+    margin-bottom: 25px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
 
+.form-group {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: #bbb;
+}
+
+input {
+    width: 100%;
+    padding: 14px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: white;
+    font-size: 16px; /* આનાથી મોબાઈલમાં ઝૂમ નહીં થાય */
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: var(--amber);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.btn {
+    width: 100%;
+    padding: 15px;
+    background: var(--amber);
+    color: black;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 180, 0, 0.3);
+}
+
+/* --- MOBILE SPECIFIC FIX --- */
+@media (max-width: 480px) {
+    body {
+        align-items: flex-start; /* મોબાઈલમાં ઉપરથી શરૂ થશે */
+        padding-top: 50px;
+    }
+    
     .container {
-        width: 95%; /* મોબાઈલમાં પૂરી પહોળાઈ લેશે */
         padding: 20px;
+        border-radius: 15px;
     }
 
     h1 {
-        font-size: 1.6rem;
-        text-align: center;
+        font-size: 1.5rem;
     }
-
-    .form-group input {
-        width: 100%;
-        font-size: 16px; /* ઝૂમ રોકવા માટે */
-        padding: 12px;
-        margin-bottom: 15px;
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        color: white;
-        border-radius: 8px;
-    }
-
-    .btn {
-        width: 100%;
-        padding: 15px;
-        font-size: 1rem;
-        background-color: var(--amber);
-        color: black;
-        border: none;
-        border-radius: 8px;
-        font-weight: bold;
-        text-transform: uppercase;
-    }
-
-    /* Gauge લોજિક મોબાઈલ માટે */
-    .gauge {
-        width: 120px;
-        height: 120px;
-        margin: 0 auto 20px auto;
-    }
-}
-
-/* Gauge Animation */
-.gauge {
-    background: conic-gradient(rgba(255, 255, 255, 0.05) 0deg, rgba(255, 255, 255, 0.05) 360deg);
-    border-radius: 50%;
-}
-
-.group:hover .gauge {
-    background: conic-gradient(var(--amber) 0deg, var(--amber) var(--percent), rgba(255, 255, 255, 0.05) var(--percent));
-}
-
-#start-ignition:active {
-    animation: start-vibrate 0.1s infinite;
-}
-
-@keyframes start-vibrate {
-    0% { transform: scale(1); }
-    50% { transform: scale(0.98); }
-    100% { transform: scale(1); }
 }
