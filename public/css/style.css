@@ -3,45 +3,95 @@
     --amber: #ffb400;
 }
 
-* { cursor: crosshair; }
+* { 
+    cursor: crosshair; 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+}
 
 body {
     background-color: var(--asphalt);
-    overflow-y: hidden;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
 }
 
 .glass {
     background: rgba(255, 255, 255, 0.01);
     backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
 }
 
-.grayscale {
-    filter: grayscale(100%) contrast(1.2) brightness(0.7);
+/* --- MOBILE RESPONSIVENESS (મોબાઈલ માટે સુધારો) --- */
+@media (max-width: 768px) {
+    body {
+        overflow-y: auto; /* મોબાઈલમાં સ્ક્રોલ કરવા દેશે */
+        padding: 20px 0;
+    }
+
+    .container {
+        width: 95%; /* મોબાઈલમાં પૂરી પહોળાઈ લેશે */
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+        text-align: center;
+    }
+
+    .form-group input {
+        width: 100%;
+        font-size: 16px; /* ઝૂમ રોકવા માટે */
+        padding: 12px;
+        margin-bottom: 15px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: white;
+        border-radius: 8px;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 15px;
+        font-size: 1rem;
+        background-color: var(--amber);
+        color: black;
+        border: none;
+        border-radius: 8px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    /* Gauge લોજિક મોબાઈલ માટે */
+    .gauge {
+        width: 120px;
+        height: 120px;
+        margin: 0 auto 20px auto;
+    }
 }
 
-.group:hover .grayscale {
-    filter: grayscale(0%) contrast(1) brightness(1);
-}
-
-/* Gauge Logic */
+/* Gauge Animation */
 .gauge {
     background: conic-gradient(rgba(255, 255, 255, 0.05) 0deg, rgba(255, 255, 255, 0.05) 360deg);
+    border-radius: 50%;
 }
 
 .group:hover .gauge {
     background: conic-gradient(var(--amber) 0deg, var(--amber) var(--percent), rgba(255, 255, 255, 0.05) var(--percent));
-    box-shadow: 0 0 30px rgba(255, 180, 0, 0.1);
-}
-
-/* Push-to-Start Vibration */
-@keyframes start-vibrate {
-    0% { transform: scale(1); }
-    25% { transform: scale(0.98) translate(1px, 1px); }
-    75% { transform: scale(0.98) translate(-1px, -1px); }
-    100% { transform: scale(1); }
 }
 
 #start-ignition:active {
     animation: start-vibrate 0.1s infinite;
-    border-color: var(--amber);
+}
+
+@keyframes start-vibrate {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.98); }
+    100% { transform: scale(1); }
 }
