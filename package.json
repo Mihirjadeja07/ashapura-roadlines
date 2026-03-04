@@ -1,0 +1,14 @@
+{
+  "name": "ashapura-roadlines",
+  "version": "1.0.0",
+  "description": "Cinematic VTC Portal for Ashapura Roadlines",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.4",
+    "express": "^4.22.1",
+    "mysql2": "^3.18.2"
+  }
+}

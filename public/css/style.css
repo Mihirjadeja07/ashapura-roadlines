@@ -1,0 +1,47 @@
+:root {
+    --asphalt: #050505;
+    --amber: #ffb400;
+}
+
+* { cursor: crosshair; }
+
+body {
+    background-color: var(--asphalt);
+    overflow-y: hidden;
+}
+
+.glass {
+    background: rgba(255, 255, 255, 0.01);
+    backdrop-filter: blur(20px);
+}
+
+.grayscale {
+    filter: grayscale(100%) contrast(1.2) brightness(0.7);
+}
+
+.group:hover .grayscale {
+    filter: grayscale(0%) contrast(1) brightness(1);
+}
+
+/* Gauge Logic */
+.gauge {
+    background: conic-gradient(rgba(255, 255, 255, 0.05) 0deg, rgba(255, 255, 255, 0.05) 360deg);
+}
+
+.group:hover .gauge {
+    background: conic-gradient(var(--amber) 0deg, var(--amber) var(--percent), rgba(255, 255, 255, 0.05) var(--percent));
+    box-shadow: 0 0 30px rgba(255, 180, 0, 0.1);
+}
+
+/* Push-to-Start Vibration */
+@keyframes start-vibrate {
+    0% { transform: scale(1); }
+    25% { transform: scale(0.98) translate(1px, 1px); }
+    75% { transform: scale(0.98) translate(-1px, -1px); }
+    100% { transform: scale(1); }
+}
+
+#start-ignition:active {
+    animation: start-vibrate 0.1s infinite;
+    border-color: var(--amber);
+}

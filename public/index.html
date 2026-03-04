@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASHAPURA ROADLINES | Elite VTC</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: { asphalt: '#050505', amber: '#ffb400' }
+            }
+          }
+        }
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-asphalt text-white overflow-x-hidden">
+
+    <div id="ignition-overlay" class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black transition-all duration-1000">
+        <div class="relative group">
+            <button id="start-ignition" class="w-40 h-40 rounded-full border-4 border-white/10 flex flex-col items-center justify-center gap-2 transition-all duration-500 hover:border-amber hover:shadow-[0_0_50px_rgba(255,180,0,0.3)] bg-gradient-to-br from-neutral-900 to-black relative overflow-hidden">
+                <span class="font-syncopate text-[10px] tracking-widest text-gray-500 group-hover:text-amber">ENGINE</span>
+                <span class="font-syncopate text-xl font-bold tracking-tighter group-hover:text-white">START</span>
+                <span class="font-syncopate text-[8px] tracking-[0.3em] text-amber opacity-50">STOP</span>
+                <div class="absolute inset-2 border border-amber/5 rounded-full"></div>
+            </button>
+        </div>
+        <h2 class="font-syncopate text-white/20 text-[10px] tracking-[1.2em] mt-12 uppercase">Ashapura Systems Active</h2>
+    </div>
+
+    <nav class="fixed top-0 w-full z-40 flex justify-between items-center px-12 py-10 bg-gradient-to-b from-black/90 to-transparent">
+        <div class="font-syncopate text-2xl tracking-tighter font-bold">ASHAPURA<span class="text-amber">.</span></div>
+        <div class="hidden md:flex gap-12 font-space text-[10px] uppercase tracking-[0.3em] text-gray-500">
+            <a href="#story" class="hover:text-amber transition-colors">The Legacy</a>
+            <a href="#armory" class="hover:text-amber transition-colors">The Armory</a>
+            <a href="#dispatch" class="hover:text-amber transition-colors">Dispatch</a>
+        </div>
+    </nav>
+
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <img src="images/wp13496619-volvo-fh16-780-wallpapers.jpg" alt="Volvo Hero" class="absolute inset-0 w-full h-full object-cover opacity-40 parallax" data-speed="0.2">
+        <div class="relative z-20 text-center px-4">
+            <p class="font-syncopate text-amber tracking-[1.2em] uppercase text-sm md:text-lg mb-6 opacity-90">Established 2017</p>
+            <h1 class="font-syncopate text-5xl md:text-[7rem] font-bold tracking-tighter uppercase leading-none mb-6">
+                ASHAPURA ROADLINES
+            </h1>
+            <h2 class="font-syncopate text-xl md:text-3xl tracking-[0.8em] text-white/80 uppercase font-light">
+                Precision <span class="text-transparent" style="-webkit-text-stroke: 1px #fff">Engineering</span>
+            </h2>
+        </div>
+    </section>
+
+    <section id="story" class="relative py-48 px-6 md:px-24 grid md:grid-cols-2 gap-24 items-center bg-asphalt">
+        <div class="space-y-10" id="mission-trigger">
+            <h3 class="font-syncopate text-4xl text-amber uppercase tracking-widest">Join the Legacy</h3>
+            <div class="font-space text-xl text-gray-400 leading-relaxed space-y-8">
+                <p>Since 2017, Ashapura Roadlines has defined the standard for virtual logistics. We are more than a fleet; we are a brotherhood of the road, dominating the digital highways of <strong>World of Trucks</strong> and <strong>Euro Truck Simulator 2</strong>.</p>
+                <p>Our journey began with a single Volvo FH. Today, we stand as a premier VTC, recognized for 1:1 real-scale distance logging and "Volvo-grade" excellence.</p>
+            </div>
+        </div>
+        <div class="relative group">
+            <img src="images/wallpaperflare.com_wallpaper.jpg" class="grayscale group-hover:grayscale-0 transition-all duration-1000 rounded-sm shadow-2xl relative z-10">
+        </div>
+    </section>
+
+    <section id="armory" class="py-32 bg-[#080808]">
+        <div class="max-w-[1600px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 px-6">
+            <div class="relative overflow-hidden group h-[600px] bg-black">
+                <img src="images/wp13496630-volvo-fh16-780-wallpapers.jpg" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105">
+                <div class="absolute bottom-12 left-12 z-10">
+                    <p class="font-syncopate text-amber text-xs tracking-widest mb-2">HEAVY HAUL DIVISION</p>
+                    <h4 class="font-syncopate text-3xl">VOLVO FH16 780</h4>
+                </div>
+            </div>
+            <div class="relative overflow-hidden group h-[600px] bg-black">
+                <img src="images/wp13496629-volvo-fh16-780-wallpapers.jpg" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105">
+                <div class="absolute bottom-12 left-12 z-10">
+                    <p class="font-syncopate text-amber text-xs tracking-widest mb-2">LOGISTICS CORE</p>
+                    <h4 class="font-syncopate text-3xl">GLOBETROTTER XL</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-32 bg-asphalt">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <h3 class="font-syncopate text-2xl tracking-[0.4em] uppercase">Fleet Status</h3>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+                <div class="flex flex-col items-center group">
+                    <div class="gauge w-48 h-48 rounded-full flex items-center justify-center mb-6 relative transition-all duration-700" style="--percent: 94%;">
+                        <div class="absolute inset-4 rounded-full bg-asphalt flex items-center justify-center">
+                            <span class="font-syncopate text-2xl group-hover:text-amber transition-colors">94%</span>
+                        </div>
+                    </div>
+                    <span class="font-space text-xs tracking-widest text-gray-500 uppercase">Fleet Uptime</span>
+                </div>
+                <div class="flex flex-col items-center group">
+                    <div class="gauge w-48 h-48 rounded-full flex items-center justify-center mb-6 relative transition-all duration-700" style="--percent: 78%;">
+                        <div class="absolute inset-4 rounded-full bg-asphalt flex items-center justify-center">
+                            <span class="font-syncopate text-2xl group-hover:text-amber transition-colors">120K</span>
+                        </div>
+                    </div>
+                    <span class="font-space text-xs tracking-widest text-gray-500 uppercase">KM Logged / Mo</span>
+                </div>
+                <div class="flex flex-col items-center group">
+                    <div class="gauge w-48 h-48 rounded-full flex items-center justify-center mb-6 relative transition-all duration-700" style="--percent: 85%;">
+                        <div class="absolute inset-4 rounded-full bg-asphalt flex items-center justify-center">
+                            <span class="font-syncopate text-2xl group-hover:text-amber transition-colors">85%</span>
+                        </div>
+                    </div>
+                    <span class="font-space text-xs tracking-widest text-gray-500 uppercase">Eco-Score</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="dispatch" class="py-48 bg-asphalt flex flex-col items-center justify-center relative overflow-hidden">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[20vw] font-syncopate opacity-[0.03] whitespace-nowrap pointer-events-none select-none">ASHAPURA</div>
+        <div class="glass p-16 w-full max-w-3xl border border-white/5 mx-6 relative z-10">
+            <h3 class="font-syncopate text-3xl mb-12 text-center tracking-widest">REQUEST DISPATCH</h3>
+            <form action="/apply" method="POST" class="space-y-10">
+                <div class="space-y-2">
+                    <label class="font-space text-[10px] text-gray-500 tracking-[0.3em]">OPERATOR NAME</label>
+                    <input name="driver_name" type="text" placeholder="ENTER IDENTIFICATION" class="w-full bg-white/5 border-b border-white/10 p-4 outline-none focus:border-amber transition-all font-space uppercase">
+                </div>
+                <div class="space-y-2">
+                    <label class="font-space text-[10px] text-gray-500 tracking-[0.3em]">WORLD OF TRUCKS ID</label>
+                    <input name="wot_id" type="text" placeholder="ENTER W.O.T PROFILE ID" class="w-full bg-white/5 border-b border-white/10 p-4 outline-none focus:border-amber transition-all font-space uppercase">
+                </div>
+                <button type="submit" class="w-full py-6 bg-amber text-black font-syncopate tracking-[0.5em] hover:bg-white transition-all duration-500 font-bold text-sm">SUBMIT LOGS</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="py-20 border-t border-white/5 text-center font-space text-[10px] tracking-[0.5em] uppercase text-gray-700">
+        &copy; 2026 ASHAPURA ROADLINES. THE ART OF HAULAGE.
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

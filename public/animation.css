@@ -1,0 +1,36 @@
+:root {
+    --gold: #ffb400;
+    --dark: #050505;
+    --grey: #121212;
+    --glass: rgba(255, 255, 255, 0.02);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--dark); color: #fff; font-family: 'Space Grotesk', sans-serif; overflow-x: hidden; }
+
+.ultra-nav {
+    position: fixed; top: 0; width: 100%; padding: 40px 6%;
+    display: flex; justify-content: space-between; align-items: center; z-index: 1000;
+}
+.logo { font-family: 'Syncopate'; font-weight: 700; font-size: 1.1rem; letter-spacing: 4px; }
+.gold { color: var(--gold); }
+
+.nav-links a { color: #fff; text-decoration: none; margin-left: 40px; font-weight: 600; font-size: 0.9rem; }
+.btn-outline { border: 1px solid var(--gold); padding: 10px 20px; color: var(--gold) !important; }
+
+.hero { height: 100vh; display: flex; align-items: center; padding: 0 8%; position: relative; overflow: hidden; }
+.parallax-bg { position: absolute; inset: 0; width: 100%; height: 110%; object-fit: cover; z-index: -2; filter: brightness(0.3); }
+.vignette { position: absolute; inset: 0; background: radial-gradient(circle, transparent 20%, #000 100%); z-index: -1; }
+
+.main-title { font-family: 'Syncopate'; font-size: clamp(3rem, 10vw, 8rem); line-height: 0.85; margin: 20px 0; }
+.glitch { color: var(--gold); text-shadow: 3px 3px 0px rgba(255,0,0,0.5), -3px -3px 0px rgba(0,0,255,0.5); }
+
+.grid-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; padding: 150px 8%; align-items: center; }
+.text-side label { color: var(--gold); font-weight: bold; letter-spacing: 6px; font-size: 0.8rem; }
+.text-side h3 { font-size: 3rem; margin: 20px 0; font-family: 'Syncopate'; }
+.img-side img { width: 100%; border-left: 4px solid var(--gold); }
+
+.glass-form { background: var(--glass); border: 1px solid rgba(255,255,255,0.05); backdrop-filter: blur(30px); padding: 60px; max-width: 900px; margin: 100px auto; }
+input, textarea { width: 100%; background: transparent; border: none; border-bottom: 1px solid #333; padding: 15px; color: #fff; margin-bottom: 25px; outline: none; }
+.transmit-btn { background: var(--gold); border: none; padding: 20px; font-weight: 700; width: 100%; cursor: pointer; transition: 0.4s; }
+.transmit-btn:hover { background: #fff; letter-spacing: 5px; }
