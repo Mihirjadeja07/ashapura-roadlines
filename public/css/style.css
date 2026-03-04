@@ -3,6 +3,7 @@
     --amber: #ffb400;
 }
 
+/* બેઝિક સેટિંગ્સ જે બધી સ્ક્રીન પર લાગુ પડશે */
 * { 
     margin: 0; 
     padding: 0; 
@@ -18,58 +19,56 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow-x: hidden;
-    padding: 20px;
+    padding: 15px;
 }
 
-/* મેઈન કન્ટેનર જે મોબાઈલમાં સરખું દેખાશે */
+/* મેઈન કાર્ડ જે મોબાઈલમાં 100% પહોળાઈ લેશે */
 .container {
+    display: flex;
+    flex-direction: column; /* લાઈન-ટુ-લાઇન કરવા માટે */
     width: 100%;
-    max-width: 450px;
+    max-width: 400px; /* ડેસ્કટોપ પર આટલું મોટું દેખાશે */
     padding: 25px;
-    background: rgba(255, 255, 255, 0.02);
+    background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(15px);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    border-radius: 15px;
 }
 
 h1 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     color: var(--amber);
-    margin-bottom: 25px;
     text-align: center;
+    margin-bottom: 20px;
     text-transform: uppercase;
-    letter-spacing: 2px;
 }
 
 .form-group {
-    margin-bottom: 20px;
     width: 100%;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column; /* લેબલ અને ઇનપુટને લાઈન-ટુ-લાઇન કરવા માટે */
 }
 
 label {
-    display: block;
     margin-bottom: 8px;
     font-size: 0.9rem;
-    color: #bbb;
+    color: #ccc;
 }
 
 input {
-    width: 100%;
-    padding: 14px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
+    width: 100%; /* પૂરી પહોળાઈ લેશે */
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
     color: white;
     font-size: 16px; /* આનાથી મોબાઈલમાં ઝૂમ નહીં થાય */
     outline: none;
-    transition: 0.3s;
 }
 
 input:focus {
     border-color: var(--amber);
-    background: rgba(255, 255, 255, 0.1);
 }
 
 .btn {
@@ -78,33 +77,23 @@ input:focus {
     background: var(--amber);
     color: black;
     border: none;
-    border-radius: 10px;
+    border-radius: 8px;
     font-weight: bold;
     font-size: 1rem;
-    cursor: pointer;
     text-transform: uppercase;
-    transition: 0.3s;
     margin-top: 10px;
 }
 
-.btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(255, 180, 0, 0.3);
-}
-
-/* --- MOBILE SPECIFIC FIX --- */
-@media (max-width: 480px) {
+/* મોબાઈલ માટે ખાસ ફેરફાર */
+@media (max-width: 600px) {
     body {
         align-items: flex-start; /* મોબાઈલમાં ઉપરથી શરૂ થશે */
-        padding-top: 50px;
+        padding-top: 30px;
     }
     
     .container {
-        padding: 20px;
-        border-radius: 15px;
-    }
-
-    h1 {
-        font-size: 1.5rem;
+        padding: 15px;
+        border: none; /* મોબાઈલમાં બોર્ડર કાઢી નાખવી હોય તો */
+        background: transparent; /* ક્લીન લુક માટે */
     }
 }
