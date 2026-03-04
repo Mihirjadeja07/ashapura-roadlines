@@ -3,165 +3,108 @@
     --amber: #ffb400;
 }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    -webkit-tap-highlight-color: transparent;
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    cursor: crosshair; 
 }
 
-body{
-    background: var(--asphalt);
-    color:white;
-    font-family:'Segoe UI',sans-serif;
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    overflow-x:hidden;
-    padding:20px;
+body {
+    background-color: var(--asphalt);
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    padding: 20px;
 }
 
-/* Main Container */
-.container{
-    width:100%;
-    max-width:420px;
-    padding:30px 25px;
-    background:rgba(255,255,255,0.03);
-    backdrop-filter:blur(18px);
-    -webkit-backdrop-filter:blur(18px);
-    border:1px solid rgba(255,255,255,0.08);
-    border-radius:22px;
-    box-shadow:0 20px 45px rgba(0,0,0,0.6);
-    transition:0.3s;
+/* મેઈન કન્ટેનર જે મોબાઈલમાં સરખું દેખાશે */
+.container {
+    width: 100%;
+    max-width: 450px;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
 }
 
-/* Heading */
-h1{
-    font-size:1.9rem;
-    color:var(--amber);
-    margin-bottom:25px;
-    text-align:center;
-    text-transform:uppercase;
-    letter-spacing:2px;
+h1 {
+    font-size: 1.8rem;
+    color: var(--amber);
+    margin-bottom: 25px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
-/* Form */
-.form-group{
-    margin-bottom:18px;
-    width:100%;
+.form-group {
+    margin-bottom: 20px;
+    width: 100%;
 }
 
-label{
-    display:block;
-    margin-bottom:7px;
-    font-size:0.85rem;
-    color:#aaa;
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: #bbb;
 }
 
-/* Inputs */
-input{
-    width:100%;
-    padding:14px 15px;
-    background:rgba(255,255,255,0.05);
-    border:1px solid rgba(255,255,255,0.08);
-    border-radius:12px;
-    color:white;
-    font-size:16px;
-    outline:none;
-    transition:0.25s ease;
+input {
+    width: 100%;
+    padding: 14px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: white;
+    font-size: 16px; /* આનાથી મોબાઈલમાં ઝૂમ નહીં થાય */
+    outline: none;
+    transition: 0.3s;
 }
 
-input::placeholder{
-    color:#666;
+input:focus {
+    border-color: var(--amber);
+    background: rgba(255, 255, 255, 0.1);
 }
 
-input:focus{
-    border-color:var(--amber);
-    background:rgba(255,255,255,0.08);
-    box-shadow:0 0 0 2px rgba(255,180,0,0.15);
+.btn {
+    width: 100%;
+    padding: 15px;
+    background: var(--amber);
+    color: black;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 0.3s;
+    margin-top: 10px;
 }
 
-/* Button */
-.btn{
-    width:100%;
-    padding:15px;
-    background:var(--amber);
-    color:black;
-    border:none;
-    border-radius:12px;
-    font-weight:700;
-    font-size:1rem;
-    text-transform:uppercase;
-    letter-spacing:1px;
-    cursor:pointer;
-    transition:0.25s;
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 180, 0, 0.3);
 }
 
-.btn:hover{
-    transform:translateY(-2px);
-    box-shadow:0 6px 18px rgba(255,180,0,0.35);
-}
-
-.btn:active{
-    transform:scale(0.98);
-}
-
-/* Tablet */
-@media (max-width:768px){
-
-    body{
-        padding:25px;
-        align-items:flex-start;
-        padding-top:60px;
+/* --- MOBILE SPECIFIC FIX --- */
+@media (max-width: 480px) {
+    body {
+        align-items: flex-start; /* મોબાઈલમાં ઉપરથી શરૂ થશે */
+        padding-top: 50px;
+    }
+    
+    .container {
+        padding: 20px;
+        border-radius: 15px;
     }
 
-    .container{
-        max-width:450px;
-        margin:auto;
+    h1 {
+        font-size: 1.5rem;
     }
-
-}
-
-/* Mobile Phones */
-@media (max-width:480px){
-
-    body{
-        padding:18px;
-        padding-top:50px;
-    }
-
-    .container{
-        padding:24px 18px;
-        border-radius:18px;
-    }
-
-    h1{
-        font-size:1.5rem;
-        margin-bottom:20px;
-    }
-
-    input{
-        padding:13px;
-        font-size:16px;
-    }
-
-    .btn{
-        padding:14px;
-        font-size:0.95rem;
-    }
-
-}
-
-/* Small Phones */
-@media (max-width:360px){
-
-    h1{
-        font-size:1.3rem;
-    }
-
-    .container{
-        padding:20px 16px;
-    }
-
 }
